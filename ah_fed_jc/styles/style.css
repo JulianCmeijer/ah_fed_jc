@@ -1,0 +1,526 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+ 
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+    /* startje */
+    --color-text: #131638;
+    --color-text-primary: #5e636e;
+    --color-header: #fffcfc;
+    --color-background:#ffffff;
+    --color-background-footer: #f3f6f8;
+    --color-merk: #39b0e3;
+    --main-font: 'hamburg-serial', sans-serif;
+}
+
+@font-face {
+  font-family: "hamburg-serial";
+  src: url("../fonts/Hamburg-Serial\ Regular.ttf") format("ttf"),
+       url("../fonts/Hamburg-Serial\ Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/****************/
+/* JOUW STYLING */
+/****************/
+ 
+body {
+    margin: 0;
+    background-color: white;
+    font-size: 1rem;
+    width: 100%;
+    font-family: var(--main-font);
+}
+ 
+img {
+    width: 100%;
+}
+
+/* HEADER */
+ 
+header {
+    background: #131638;
+    color: var(--color-header);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: .5em 1.5em;
+    gap: 9em;
+    height: 3em;
+}
+ 
+header p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+ 
+header p span {
+    color: var(--color-merk)
+}
+ 
+header details summary {
+    font-size: 1.5rem;
+    list-style: none;
+    color: var(--color-header)
+}
+ 
+header details ul {
+    margin: 0;
+    padding: 1em;
+    background-color: #131638;
+    position: absolute;
+    list-style: none;
+    top: 1.9em;
+    right: 1.5em;
+    border: 0.5em;
+    display: none;
+    z-index: 2;
+}
+ 
+header details[open] ul {
+    display: block;
+}
+ 
+header details ul li {
+    margin: 0.5em 0;
+}
+ 
+header details ul li a {
+    color: var(--color-header);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+ 
+header details ul li a:hover {
+    text-decoration: underline;
+}
+ 
+/* HEADER */
+ 
+/* MAIN */
+ 
+/* SECTION 1 */
+ 
+main section:first-of-type {
+    text-align: center;
+    color: var(--color-header);
+    position: relative;
+ 
+    padding: 5em 1.5em;
+    margin: 2rem;
+    border-radius: 2em;    
+    position: relative;
+ 
+    background-image: url("../images/begin_foto_ah.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 25em;
+}
+ 
+/* AI */
+main section:first-of-type::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  border-radius: 2em;
+}
+ 
+main section:first-of-type > * {
+  position: relative;
+  z-index: 1;
+}
+/* AI */
+ 
+/* De twee stukjes code hierboven zijn van AI.
+De prompt was: "Hoe maak ik een achtergrond foto donkerder" */
+ 
+main section:first-of-type h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2em;
+    font-weight: bold;
+}
+ 
+main section:first-of-type p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+}
+ 
+main section:first-of-type div {
+    display: flex;
+    justify-content: center;
+    max-width: 25em;
+    margin: auto;
+    border-radius: 0.3em;
+}
+ 
+main section:first-of-type div input {
+    flex: 1;
+    padding: 0.8em;
+    border: none;
+    font-size: 1rem;
+}
+ 
+main section:first-of-type div button {
+    background: var(--color-merk);
+    border: none;
+    padding: 0.8em 1em;
+    color: var(--color-background);
+    font-size: 1rem;
+}
+ 
+main section:first-of-type ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 0;
+}
+ 
+main section:first-of-type ul li a {
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    text-decoration: none;
+    color: var(--color-header);
+    font-size: 0.9em;
+    font-weight: bolder;
+}
+ 
+/* SECTION 1 */
+ 
+/* SECTION 2 */
+
+section:nth-of-type(2) article {
+    display: grid;
+    grid-template-columns: 10em 1fr;
+    grid-template-rows: 1fr 1fr min-content;
+    align-items: center;
+    border-top: rgb(180, 180, 180) 1px solid;
+    border-bottom: rgb(180, 180, 180) 1px solid;
+    border-radius: .5em;
+}
+ 
+section:nth-of-type(2) article img {
+    grid-row: 1 / 4;
+    width: 100%;
+    height: auto;
+}
+
+section:nth-of-type(2) article h2 {
+    font-size: 1.2em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding: .5em;
+    color: var(--color-text);
+}
+
+section:nth-of-type(2) article p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding: .5em;
+    color: var(--color-text-primary)
+}
+
+section:nth-of-type(2) svg{
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: .5em;
+}
+
+section:nth-of-type(2) article:not(:last-child) {
+  margin-bottom: 2em;
+}
+
+/* SECTION 2 */
+ 
+/* SECTION 3 */
+ 
+section:nth-of-type(3) {
+    padding: 1rem;
+    text-align: center;
+}
+ 
+section:nth-of-type(3) > h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color:var(--color-text)
+}
+ 
+section:nth-of-type(3) > ul {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: none;
+    gap: 1rem;
+    padding: 0em;
+    margin: 0;
+    list-style: none;        
+}  
+ 
+section:nth-of-type(3) article {
+    background-color: var(--color-background);
+    border-radius: 0.8em;
+    box-shadow: black 0 0.2em 0.6em;
+    overflow: hidden;
+    max-width: 17em;
+    text-align: center;
+ 
+    display: flex;
+    flex-direction: column-reverse;
+}
+ 
+section:nth-of-type(3) article img {
+    width: 100%;
+    height: 10em;
+    object-fit: cover;
+}
+ 
+section:nth-of-type(3) article > ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.8em 0.6em;
+  font-size: 0.9em;
+  color: #333;
+  list-style: none;
+  height: 4em;
+  width: 20em;
+  background-color: #f3f6f8;
+  margin-left: -.5em;
+}
+ 
+section:nth-of-type(3) article > ul > li {
+  display: flex;
+  align-items: center;
+  scroll-snap-align: start;
+  gap: 0.4em;
+}
+ 
+section:nth-of-type(3)article h2 {
+  font-size: 1em;
+  padding: .8em .5em 1em .5em;
+  margin: 0;
+  font-weight: 600;
+  background-color: gold;
+}
+ 
+  
+main > section:nth-of-type(3) a {
+  display: inline-block;
+  background-color: var(--color-merk);
+  color: var(--color-background);
+  font-weight: bold;
+  text-decoration: none;
+  padding: .8em 1.6em;
+  margin-top: 2em;
+  border-radius: .5em;
+  text-transform: lowercase;
+  font-size: 1rem;
+}
+
+section:nth-of-type(3) p{
+    font-weight: bold;  
+}   
+ 
+/* SECTION 3 */
+ 
+section:nth-of-type(4)  {
+    margin: 0 auto;
+    line-height: 1.6;
+}
+ 
+section:nth-of-type(4) h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-text);
+    margin-bottom: .5em;
+    padding-left: 1.08em;
+}
+ 
+section:nth-of-type(4) p {
+    margin-bottom: 1em;
+    color: var(--color-text-primary);
+    padding-left: 1.5em;
+}
+ 
+section:nth-of-type(4) ul {
+    list-style: disc;
+    margin-left: 1.5em;
+}
+ 
+section:nth-of-type(4) a {
+    color:var(--color-text-primary);
+    text-decoration: underline dotted;
+    text-underline-offset: .3em;
+}
+ 
+ 
+ 
+ 
+ 
+/* FOOTER */
+
+footer section {
+    background-color: var(--color-background-footer);    
+    padding-left: 1.08em;
+}
+
+footer section:nth-of-type(1) h3,
+footer section:nth-of-type(2) h3{
+    color: var(--color-text);
+    font-size: 1.4rem;
+    font-weight: bold; 
+    margin-bottom: .5em;
+    padding-top: 4em;
+    border-bottom: 1px solid lightgray;
+}
+
+footer section:nth-of-type(1) ul,
+footer section:nth-of-type(2) ul{
+    list-style: none;
+    padding: 0;
+}
+
+footer section:nth-of-type(1) ul li,
+footer section:nth-of-type(2) ul li{
+    display: flex;
+    text-decoration: none;
+}
+
+footer section:nth-of-type(1) ul li::before,
+footer section:nth-of-type(2) ul li::before{
+    content: "";      
+    display: inline-block;
+    width: .8em;
+    height: .8em;
+    margin-right: .5em; 
+    color: var(--color-text);  
+    font-weight: bold;
+    background: url(../images/svg_pijl_r.svg);
+    background-size: contain;
+}
+
+footer > section:nth-of-type(1) a,
+footer > section:nth-of-type(2) a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-size: 1.1em;
+    padding: .5em;
+}
+
+/* FOOTER sectie 3 */
+
+footer section:nth-of-type(3)   {
+    padding-left: 1.08em;
+}
+
+footer section:nth-of-type(3) details {
+    border-bottom: 1px solid lightgray;
+    padding: 0.8em 0;  
+    width: fit-content;
+    margin: auto;
+}   
+
+footer section:nth-of-type(3) summary {
+    font-weight: bold;
+    list-style: none;
+    cursor: pointer;
+}
+
+footer section:nth-of-type(3) summary::-webkit-details-marker {
+  display: none;
+}
+
+footer section:nth-of-type(3) summary::after {
+  content: "▾";
+  float: right;
+  transition: transform 0.2s;
+}
+
+footer section:nth-of-type(3) details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+footer section:nth-of-type(3) ul {
+  list-style: none;
+  margin: .5em 0 0 0;
+  padding: 0;
+}
+
+footer section:nth-of-type(3) li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 0.3em 0;
+}
+
+footer section:nth-of-type(3) li a:hover {
+  color: var(--color-merk);
+}
+
+/* FOOTER SECTIE 4 */
+footer section:nth-of-type(4) ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    padding: 2em 0;
+    list-style: none;
+}
+
+footer section:nth-of-type(4) li :hover {
+    color: var(--color-merk);
+}
+
+footer section:nth-of-type(4) li :focus {
+    color: var(--color-text);
+}
+
+footer section:nth-of-type(4) img {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+/* FOOTER SECTIE 5 */
+
+footer section:nth-of-type(5) ul {
+    list-style: none;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+footer section:nth-of-type(5) ul li {
+    margin: 1em;
+}   
+
+footer section:nth-of-type(5) a,
+footer section:nth-of-type(5) a:visited,
+footer section:nth-of-type(5) a:active {
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+
+footer section:nth-of-type(5) a:hover {
+    color: var(--color-merk);
+}
