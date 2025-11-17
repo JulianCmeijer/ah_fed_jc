@@ -52,7 +52,7 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     padding: .5em 1.5em;
     gap: 9em;
@@ -117,7 +117,7 @@ main section:first-of-type {
     color: var(--color-header);
     position: relative;
  
-    padding: 5em 1.5em;
+    padding: 4rem 1.5rem;
     margin: 2rem;
     border-radius: 2em;    
     position: relative;
@@ -127,6 +127,10 @@ main section:first-of-type {
     background-position: center;
     background-repeat: no-repeat;
     height: 25em;
+
+    min-height: 30vh;
+    height: auto;
+
 }
  
 /* AI */
@@ -206,37 +210,52 @@ main section:first-of-type ul li a {
  
 /* SECTION 2 */
 
+section:nth-of-type(2) {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr; 
+    padding: 1.8em; 
+    align-items: stretch;             
+}
+
 section:nth-of-type(2) article {
     display: grid;
-    grid-template-columns: 10em 1fr;
-    grid-template-rows: 1fr 1fr min-content;
+    grid-template-columns: 15em 1fr;
+    grid-template-rows: auto 1fr;
     align-items: center;
-    border-top: rgb(180, 180, 180) 1px solid;
-    border-bottom: rgb(180, 180, 180) 1px solid;
+    border: rgb(180, 180, 180) 1px solid;
     border-radius: .5em;
+    gap: 1em;
+    width: 30em;
+    max-width: 100%;
+    height: 90%;
 }
- 
+
+@media (min-width: 1000px) {
+  section:nth-of-type(2) {
+    grid-template-columns: repeat(2, minmax(0, 30em))
+  }
+    
+}
+
 section:nth-of-type(2) article img {
-    grid-row: 1 / 4;
+    grid-row: 1 / 3;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 section:nth-of-type(2) article h2 {
     font-size: 1.2em;
     margin: 0;
-    display: flex;
-    align-items: center;
     padding: .5em;
     color: var(--color-text);
 }
 
 section:nth-of-type(2) article p {
     margin: 0;
-    display: flex;
-    align-items: center;
     padding: .5em;
-    color: var(--color-text-primary)
+    color: var(--color-text-primary);
+    align-self: start;
 }
 
 section:nth-of-type(2) svg{
@@ -270,6 +289,7 @@ section:nth-of-type(3) > ul {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: none;
+    align-items: stretch;
     gap: 1rem;
     padding: 0em;
     margin: 0;
@@ -280,18 +300,20 @@ section:nth-of-type(3) article {
     background-color: var(--color-background);
     border-radius: 0.8em;
     box-shadow: black 0 0.2em 0.6em;
-    overflow: hidden;
     max-width: 17em;
     text-align: center;
+    /* Overflow:hidden stond hier, weet alleen niet hoe ik dit kon fixen */
  
     display: flex;
     flex-direction: column-reverse;
+    height: 100%;
 }
  
 section:nth-of-type(3) article img {
     width: 100%;
     height: 10em;
     object-fit: cover;
+    border-radius: 0.8em 0.8em 0 0;
 }
  
 section:nth-of-type(3) article > ul {
@@ -310,10 +332,14 @@ section:nth-of-type(3) article > ul {
 }
  
 section:nth-of-type(3) article > ul > li {
-  display: flex;
-  align-items: center;
-  scroll-snap-align: start;
-  gap: 0.4em;
+    display: flex;
+    align-items: center;
+    scroll-snap-align: start;
+    gap: 0.4em;
+}
+
+section:nth-of-type(3)  li {
+    padding-block: 2em;
 }
  
 section:nth-of-type(3)article h2 {
@@ -340,6 +366,7 @@ main > section:nth-of-type(3) a {
 
 section:nth-of-type(3) p{
     font-weight: bold;  
+    flex-grow: 1;
 }   
  
 /* SECTION 3 */
@@ -436,10 +463,13 @@ footer section:nth-of-type(3)   {
 
 footer section:nth-of-type(3) details {
     border-bottom: 1px solid lightgray;
-    padding: 0.8em 0;  
-    width: fit-content;
-    margin: auto;
-}   
+    padding: 1.8em;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    
+}
+
 
 footer section:nth-of-type(3) summary {
     font-weight: bold;
@@ -463,7 +493,7 @@ footer section:nth-of-type(3) details[open] summary::after {
 
 footer section:nth-of-type(3) ul {
   list-style: none;
-  margin: .5em 0 0 0;
+  margin: 0.2em 0 0 0;
   padding: 0;
 }
 
@@ -472,6 +502,7 @@ footer section:nth-of-type(3) li a {
   color: black;
   display: block;
   padding: 0.3em 0;
+  line-height: .05em;
 }
 
 footer section:nth-of-type(3) li a:hover {

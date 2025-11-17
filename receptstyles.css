@@ -52,7 +52,7 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     padding: .5em 1.5em;
     gap: 9em;
@@ -485,82 +485,101 @@ section:nth-of-type(4) ul:nth-of-type(2) svg {
 }
 
 /* SECTION 5 */
-main > section:nth-of-type(5) {
+section:nth-of-type(5) {
     padding: 1rem;
     text-align: center;
 }
-
-main > section:nth-of-type(5) > h2 {
+ 
+section:nth-of-type(5) > h2 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
-    color: var(--color-text);
+    color:var(--color-text)
 }
-
-main > section:nth-of-type(5) > ul {
+ 
+section:nth-of-type(5) > ul {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: none;
+    align-items: stretch;
     gap: 1rem;
-    padding: 0;
+    padding: 0em;
     margin: 0;
     list-style: none;        
 }  
-
-main > section:nth-of-type(5) article {
+ 
+section:nth-of-type(5) article {
     background-color: var(--color-background);
     border-radius: 0.8em;
     box-shadow: black 0 0.2em 0.6em;
-    overflow: hidden;
     max-width: 17em;
     text-align: center;
+
+    /* Overflow:hidden stond hier, weet alleen niet hoe ik dit kon fixen */
+
+ 
     display: flex;
     flex-direction: column-reverse;
+    height: 100%;
 }
-
-main > section:nth-of-type(5) article img {
+ 
+section:nth-of-type(5) article img {
     width: 100%;
     height: 10em;
     object-fit: cover;
+    border-radius: 0.8em 0.8em 0 0;
 }
-
-main > section:nth-of-type(5) article > ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0.8em 0.6em;
-    font-size: 0.9em;
-    color: #333;
-    list-style: none;
-    height: 4em;
-    width: 20em;
-    background-color: #f3f6f8;
-    margin-left: -0.5em;
+ 
+section:nth-of-type(5) article > ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.8em 0.6em;
+  font-size: 0.9em;
+  color: #333;
+  list-style: none;
+  height: 4em;
+  width: 20em;
+  background-color: #f3f6f8;
+  margin-left: -.5em;
 }
-
-main > section:nth-of-type(5) article > ul > li {
+ 
+section:nth-of-type(5) article > ul > li {
     display: flex;
     align-items: center;
     scroll-snap-align: start;
     gap: 0.4em;
 }
 
-main > section:nth-of-type(5) article h2 {
-    font-size: 1em;
-    padding: 0.8em 0.5em 1em 0.5em;
-    margin: 0;
-    font-weight: 600;
-    background-color: gold;
+section:nth-of-type(5)  li {
+    padding-block: 2em;
 }
-
+ 
+section:nth-of-type(5)article h2 {
+  font-size: 1em;
+  padding: .8em .5em 1em .5em;
+  margin: 0;
+  font-weight: 600;
+  background-color: gold;
+}
+ 
+  
 main > section:nth-of-type(5) a {
-    display: inline-block;
-    background-color: var(--color-merk);
-    color: var(--color-background);
+  display: inline-block;
+  background-color: var(--color-merk);
+  color: var(--color-background);
+  font-weight: bold;
+  text-decoration: none;
+  padding: .8em 1.6em;
+  margin-top: 2em;
+  border-radius: .5em;
+  text-transform: lowercase;
+  font-size: 1rem;
 }
 
-main > section:nth-of-type(5) p {
+section:nth-of-type(5) p{
     font-weight: bold;  
+    flex-grow: 1;
 }
 
 /* Section 6 */
@@ -621,79 +640,9 @@ section:nth-of-type(6) li p {
     font-weight: 400;
     font-size: 1.2rem;
 }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* FOOTER */
-
+  
 footer section {
     background-color: var(--color-background-footer);    
     padding-left: 1.08em;
@@ -750,10 +699,13 @@ footer section:nth-of-type(3)   {
 
 footer section:nth-of-type(3) details {
     border-bottom: 1px solid lightgray;
-    padding: 0.8em 0;  
-    width: fit-content;
-    margin: auto;
-}   
+    padding: 1.8em;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    
+}
+
 
 footer section:nth-of-type(3) summary {
     font-weight: bold;
@@ -777,7 +729,7 @@ footer section:nth-of-type(3) details[open] summary::after {
 
 footer section:nth-of-type(3) ul {
   list-style: none;
-  margin: .5em 0 0 0;
+  margin: 0.2em 0 0 0;
   padding: 0;
 }
 
@@ -786,6 +738,7 @@ footer section:nth-of-type(3) li a {
   color: black;
   display: block;
   padding: 0.3em 0;
+  line-height: .05em;
 }
 
 footer section:nth-of-type(3) li a:hover {
