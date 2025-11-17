@@ -512,9 +512,7 @@ section:nth-of-type(5) article {
     border-radius: 0.8em;
     box-shadow: black 0 0.2em 0.6em;
     text-align: center;
-
-    /* Overflow:hidden stond hier, weet alleen niet hoe ik dit kon fixen */
-
+    width: 17em;
  
     display: flex;
     flex-direction: column-reverse;
