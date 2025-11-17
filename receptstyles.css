@@ -511,7 +511,6 @@ section:nth-of-type(5) article {
     background-color: var(--color-background);
     border-radius: 0.8em;
     box-shadow: black 0 0.2em 0.6em;
-    max-width: 17em;
     text-align: center;
 
     /* Overflow:hidden stond hier, weet alleen niet hoe ik dit kon fixen */
@@ -540,7 +539,6 @@ section:nth-of-type(5) article > ul {
   list-style: none;
   height: 4em;
   width: 20em;
-  background-color: #f3f6f8;
   margin-left: -.5em;
 }
  
