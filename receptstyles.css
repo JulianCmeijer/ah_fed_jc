@@ -111,12 +111,10 @@ header details ul li a:hover {
 /* MAIN */
  
 /* SECTION 1 */
-/* SECTION 1 */
 main section:nth-of-type(1) {
     text-align: center;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
     position: relative;
     color: var(--color-text-primary);
     font-size: 1.2em;
@@ -235,6 +233,8 @@ main section:nth-of-type(1) ul:nth-of-type(3) a {
     text-transform: lowercase;
     font-size: 1rem;
 }
+
+
 
 /* SECTION 2 */
 main section:nth-of-type(2) {
@@ -691,10 +691,16 @@ footer > section:nth-of-type(2) a {
     padding: .5em;
 }
 
+footer > section:nth-of-type(1) a:hover,
+footer > section:nth-of-type(2) a:hover {
+    color: var(--color-merk)
+}
+
 /* FOOTER sectie 3 */
 
 footer section:nth-of-type(3)   {
     padding-left: 1.08em;
+
 }
 
 footer section:nth-of-type(3) details {
@@ -703,7 +709,6 @@ footer section:nth-of-type(3) details {
     width: 100%;
     margin: 0;
     text-align: left;
-    
 }
 
 
@@ -738,7 +743,7 @@ footer section:nth-of-type(3) li a {
   color: black;
   display: block;
   padding: 0.3em 0;
-  line-height: .05em;
+  line-height: 1.5em;
 }
 
 footer section:nth-of-type(3) li a:hover {
@@ -771,15 +776,12 @@ footer section:nth-of-type(4) img {
 /* FOOTER SECTIE 5 */
 
 footer section:nth-of-type(5) ul {
-    list-style: none;
     text-align: center;
     padding-top: 2em;
     padding-bottom: 2em;
+    flex-direction: column;
+    align-items: center;
 }
-
-footer section:nth-of-type(5) ul li {
-    margin: 1em;
-}   
 
 footer section:nth-of-type(5) a,
 footer section:nth-of-type(5) a:visited,
